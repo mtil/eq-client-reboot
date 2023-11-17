@@ -1,0 +1,38 @@
+
+2023-11-03 21:43:53	Starting EverQuest (Build Oct 31 2005 10:33:37)
+2023-11-03 21:43:53	Timezone: UTC-8h00m
+2023-11-03 21:43:53	Loading graphics DLL.
+2023-11-03 21:43:53	Parsing INI file .\eqclient.ini
+2023-11-03 21:43:53	INI file .\eqclient.ini loaded.
+2023-11-03 21:43:54	Initializing timers.
+2023-11-03 21:43:57	Checking critical files.
+2023-11-03 21:43:57	Initializing WinSock.
+2023-11-03 21:43:57	Enumerating 3D devices.
+2023-11-03 21:43:57	Found adapter #0 - Intel(R) Iris(R) Xe Graphics (31.0.101.3889)
+2023-11-03 21:43:57	Adapter #0 - Intel(R) Iris(R) Xe Graphics :
+2023-11-03 21:43:57	32Bit = 1, D32 = 0, D24 = 1, D16 = 1 
+2023-11-03 21:43:57	16Bit(565) = 1, D32 = 0, D24 = 1, D16 = 1 
+2023-11-03 21:43:57	16Bit(1555) = 0, D32 = 0, D24 = 0, D16 = 0 
+2023-11-03 21:43:57	Initializing keypress handler.
+2023-11-03 21:43:57	Parsing INI file .\defaults.ini
+2023-11-03 21:43:57	INI file .\defaults.ini loaded.
+2023-11-03 21:43:57	Loading keyboard tables.
+2023-11-03 21:43:57	Creating window.
+2023-11-03 21:43:57	Checking display driver version.
+2023-11-03 21:43:58	Activating window.
+2023-11-03 21:43:58	Picking a default resolution, desktop is 2560 x 1600, 32 bits
+2023-11-03 21:43:58	Ratio is 1.60
+2023-11-03 21:43:58	Resolution was capped at 1280 x 720
+2023-11-03 21:43:58	Resolution verified 1280 x 720, 32 bits ... diff was 1000 from 0 modes
+2023-11-03 21:43:58	Resolution selected 1280 x 720, 32 bits
+2023-11-03 21:43:58	CRender::InitDevice: Using 32bit mode.
+2023-11-03 21:43:58	CRender::InitDevice: Using vsync 0.
+2023-11-03 21:43:58	CRender::InitDevice: Using 24bit depth buffer with 8 bit stencil.
+2023-11-03 21:43:58	CRender::InitDevice: HardwareTnL Enabled.  
+2023-11-03 21:43:58	Using hardware vertex shaders. 
+2023-11-03 21:43:58	Initializing render system.
+2023-11-03 21:43:58	Trilinear Mipmapping available.
+2023-11-03 21:43:58	Vertex Shader Version: 3.0 
+2023-11-03 21:43:58	Pixel Shader Version: 3.0 
+2023-11-03 21:43:58	Initializing engine internals.
+2023-11-03 21:43:58	CRender::InitDevice completed successfully.
