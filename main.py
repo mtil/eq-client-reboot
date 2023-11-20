@@ -9,7 +9,7 @@ functions.client_launch()
 
 pulse = True
 logs_blue = r'D:\P99\Logs\eqlog_Zerotone_project1999.txt'
-logs_green = r'eqlog_Airdiael_P1999Green.txt'
+logs_green = r'D:\P99\eqlog_Airdiael_P1999Green.txt'
 while pulse:
     print("Pulse Started.")
     time.sleep(10)
