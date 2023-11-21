@@ -9,10 +9,16 @@ import pygetwindow as gw
 import automation
 
 
-
-both_clients_running = True
+green_dir = r'c:\Users\bebop\Desktop\P99\P99'
+blue_dir = r'c:\Users\bebop\Desktop\P99 - Copy\P99'
 directory = r'D:\P99'
 command = ['cmd', '/c', 'start', 'eqgame.exe', 'patchme']
+
+def directory_check(color):
+    if color is 'Blue':
+        directory = blue_dir
+    else:
+        directory = green_dir
 
 def title_change(server):
     HWND_BROADCAST = 0xFFFF
