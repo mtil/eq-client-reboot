@@ -1,6 +1,6 @@
 
 import time
-from datetime import datetime, timedelta
+import datetime
 
 import subprocess
 
@@ -21,12 +21,13 @@ def directory_check(color):
         directory = green_dir
 
 def title_change(server):
-    HWND_BROADCAST = 0xFFFF
+    # HWND_BROADCAST = 0xFFFF
     WM_SETTEXT = 0x000C
     hwnd = ctypes.windll.user32.FindWindowW(None, "Everquest")
     ctypes.windll.user32.SendMessageW(hwnd, WM_SETTEXT, 0, server)
 def client_launch():
 
+    directory_check('Blue')
     subprocess.Popen(command, cwd=directory)
     time.sleep(6)
     title_change('Blue')
@@ -35,12 +36,12 @@ def client_launch():
     time.sleep(2)
     call_login("Blue")
 
+    directory_check('Green')
     subprocess.Popen(command, cwd=directory)
     time.sleep(8)
     title_change('Green')
     move_window('Green')
     call_login("Green")
-
 
 def move_window(color):
     app = gw.getWindowsWithTitle(color)
@@ -63,6 +64,7 @@ def client_alive_check(title):
 
 def kill_clients_single(color):
     print("Kill Clients Called.")
+    directory_check(color)
     if color == "Blue":
         blue_hwnd = ctypes.windll.user32.FindWindowW(None, "Blue")
         ctypes.windll.user32.PostMessageW(blue_hwnd, 0x0010, 0, 0)
@@ -99,17 +101,20 @@ def watch_log_file(file_path):
     target_entry = 'You are out of food and drink.'
     date_format = "%a %b %d %H:%M:%S %Y"
 
+    last_entry_time = datetime.datetime.now()  # Initialize last entry time to the current time
+
     while True:
         with open(file_path, 'r') as log_file:
             for line in log_file:
                 if target_entry in line:
                     timestamp_str = line.split(']')[0][1:].strip()
-                    log_timestamp = datetime.strptime(timestamp_str, date_format)
-                    current_time = datetime.now()
-                    time_difference = current_time - log_timestamp
+                    log_timestamp = datetime.datetime.strptime(timestamp_str, date_format)
 
-                    # Check if the log entry is within the last minute
-                    if time_difference > timedelta(minutes=1):
-                        kill_clients_all()
-                        client_launch()
+                    last_entry_time = log_timestamp  # Update last entry time to the latest entry time
 
+        # Check if the last entry is more than two minutes old
+        time_difference = datetime.datetime.now() - last_entry_time
+        if time_difference > datetime.timedelta(minutes=2):
+            print('Food and drink warning found. Restarting clients.')
+            kill_clients_all()
+            client_launch()
